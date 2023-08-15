@@ -1,26 +1,26 @@
 const connection = require("../config/connection");
 const { User } = require("../models");
 
-const usernames = [
-  "sarahmartin",
-  "paullopez",
-  "alicejones",
-  "henryclark",
-  "gracegarcia",
-  "victorhall",
-  "emilyward",
-  "williamgreen",
-  "lauralee",
-  "stevenwright",
-  "monicayoung",
-  "nicholasrobinson",
-  "chloemiller",
-  "frankharris",
-  "oliviaperez",
-  "thomasprice",
-  "kaylacruz",
-  "danielsmith",
-  "lindakim",
+const userNames = [
+  "Sarah Martin",
+  "Paul Lopez",
+  "Alice Jones",
+  "Henry Clark",
+  "Grace Garcia",
+  "Victor Hall",
+  "Emily Ward",
+  "William Green",
+  "Laura Lee",
+  "Steven Wright",
+  "Monica Young",
+  "Nicholas Robinson",
+  "Chloe Miller",
+  "Frank Harris",
+  "Olivia Perez",
+  "Thomas Price",
+  "Kayla Cruz",
+  "Daniel Smith",
+  "Linda Kim",
 ];
 
 emails = [
@@ -45,22 +45,20 @@ emails = [
   "lindakim@gmail.com",
 ];
 
-// error handling for database connection
 connection.on("error", (err) => err);
 connection.once("open", async () => {
   console.log("Connected to database!");
-// delete all users to seed new users
   await User.deleteMany({});
 
   const users = [];
-// loops through usernames and emails to create new users
+
   for (let i = 0; i < userNames.length; i++) {
     const username = userNames[i];
     const email = emails[i];
 
     users.push({ username, email });
   }
-// inserts users into database
+
   await User.collection.insertMany(users);
 
   console.info("Users seeded!");
