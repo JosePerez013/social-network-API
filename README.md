@@ -19,8 +19,8 @@
 
 1. Download or clone the repository. Extract and navigate to the project repository's path in your favorite terminal application.
 2. In your terminal, type `npm i` to download all needed dependencies for the application.
-3. After downloading all dependencies, you may want to seed your database with some sample data. To seed the sample data, type `node utils/seeds.js` in your terminal. Afterwards, you will see a `console.table` with the data seeded on your database.
-4. Type `npm start` or `node server.js` to start the back-end server for API requests.
+3. After downloading all dependencies, seed your database with some sample data. To seed the sample data, type `nnpm run seed` in your terminal. Afterwards, you will see a `console.table` with the data seeded on your database.
+4. Type `npm run start` or `node server.js` to start the back-end server for API requests.
 
 ## Usage
 
